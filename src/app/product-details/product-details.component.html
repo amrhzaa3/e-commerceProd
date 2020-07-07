@@ -1,0 +1,171 @@
+
+<div class="container">
+<div class="card" style="margin-top: 150px;" >
+    <input type="radio" name="select" id="slide_1" checked>
+    <input type="radio" name="select" id="slide_2">
+    <input type="radio" name="select" id="slide_3">
+    <input type="checkbox" id="slideImg">
+
+    <div class="slider">
+      <label for="slide_1" class="slide slide_1"></label>
+      <label for="slide_2" class="slide slide_2"></label>
+      <label for="slide_3" class="slide slide_3"></label>
+    </div>
+    <div class="inner_part">
+      <label for="slideImg" class="img">
+        <img class="img_1" [src]="product?.image[0]">
+      </label>
+      <div class="content content_1">
+        <div class="title">t shirt</div>
+        <div class="text">
+          Istanbul, a fascinating city built on two Continents, divided by the Bosphorus Strait. This is one of the greatest cities in the world.
+        </div>
+        <div class="details">
+            <p class="usd"><i class="fa fa-usd" aria-hidden="true"></i>
+              {{product?.price}}</p>
+            <h1 class="size">larg</h1>
+        </div>
+        <div>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+        </div>
+        <button (click)="pushTocart(product)">Add to Cart  <i class="fa fa-shopping-cart " aria-hidden="true"></i></button>
+      </div>
+    </div>
+
+  <div class="inner_part">
+    <label for="slideImg" class="img">
+      <img class="img_2" src="assets/home/2-mob.jpg">
+    </label>
+  </div>
+
+  <div class="inner_part">
+    <label for="slideImg" class="img">
+      <img class="img_3" src="assets/home/3-mob.jpg">
+    </label>
+
+  </div>
+</div>
+</div>
+
+
+<!-- <div class="container" style="margin-top: 180px">-->
+<!--  <div class="card">-->
+<!--    <div class="card-body">-->
+<!--<div class="row">-->
+<!--<div class="col-2">-->
+<!--  <div class="row" >-->
+<!--    <a (click)="setImage(m)">-->
+<!--      <img [src]="product.image[1]" class="image2" #m>-->
+<!--    </a>-->
+<!--  </div>-->
+<!--  <div class="row" style="margin-top: 5px">-->
+<!--    <a (click)="setImage(m1)">-->
+<!--    <img [src]="product.image[2]" class="image2" #m1>-->
+<!--    </a>-->
+<!--  </div>-->
+<!--  <div class="row" style="margin-top: 5px">-->
+<!--    <a (click)="setImage(m2)">-->
+<!--      <img [src]="product.image[3]" class="image2" #m2>-->
+<!--    </a>-->
+<!--  </div>-->
+<!--</div>-->
+<!--  <div class="col-8">-->
+<!--<img [src]="ImagSliced" class="midumImageSize" id="mainimage">-->
+<!--    <button type="button" class="btn btn btn-danger"> hhhhhhhhhhhh</button>-->
+<!--  </div>-->
+<!--</div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+
+
+
+<!--<p-carousel [value]="product.image" orientation="vertical" verticalViewPortHeight="200px" [style]="{'max-width':'100px', 'margin-top':'1em'}" [numVisible]="4" >-->
+<!--  <ng-template let-car pTemplate="item">-->
+<!--&lt;!&ndash;    &ndash;&gt;-->
+<!--    <div class="car-details">-->
+<!--      <div class="p-grid p-nogutter">-->
+<!--        <div class="p-col-12">-->
+<!--          <img src="assets/clothesfolder/1.jpeg"  class="primeImag"/>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </ng-template>-->
+<!--</p-carousel>-->
+<!--<div class="text-center" >-->
+<!--<p-galleria [value]="product.image" [responsiveOptions]="responsiveOptions" [containerStyle]="{'max-width': '640px'}" [numVisible]="3">-->
+<!--  <ng-template  >-->
+<!--    <img [src]="product.image" style="width: 100%;" />-->
+<!--  </ng-template>-->
+<!--  <ng-template pTemplate="thumbnail" >-->
+<!--    <div class="p-grid p-nogutter p-justify-center">-->
+<!--      <img [src]="product.image[0]" />-->
+<!--    </div>-->
+<!--  </ng-template>-->
+<!--</p-galleria>-->
+<!--</div>-->
+
+<!--<lib-ngx-image-zoom-->
+<!--  [thumbImage]=myThumbnail-->
+<!--  [fullImage]=myFullresImage-->
+<!--  [magnification]="3"-->
+<!--  [enableScrollZoom]="true"-->
+<!--  [enableLens]="true"-->
+<!--  [lensWidth]="200" class="border-light"-->
+<!--&gt;</lib-ngx-image-zoom>-->
+
+
+<!--<div style="margin-left: 100px">-->
+<!--  <ul class="slides">-->
+<!--    <li id="slide1"><img src="assets/clothesfolder/2.jpeg" alt="" /></li>-->
+<!--    <li id="slide2"><img src="assets/clothesfolder/1.jpeg" alt="" /></li>-->
+<!--    <li id="slide3"><img src="assets/clothesfolder/5w.jpg" alt="" /></li>-->
+<!--    <li id="slide4"><img src="assets/clothesfolder/7w.jpg" alt="" /></li>-->
+<!--    <li id="slide5"><img src="assets/clothesfolder/10w.jpg" alt="" /></li>-->
+<!--  </ul>-->
+<!--  <ul class="thumbnails">-->
+<!--    <li>-->
+<!--      <a href="#slide1"><img src="assets/clothesfolder/2.jpeg" /></a>-->
+<!--    </li>-->
+<!--    <li>-->
+<!--      <a href="#slide2"><img src="assets/clothesfolder/1.jpeg" /></a>-->
+<!--    </li>-->
+<!--    <li>-->
+<!--      <a href="#slide3"><img src="assets/clothesfolder/5w.jpg" /></a>-->
+<!--    </li>-->
+<!--    <li>-->
+<!--      <a href="#slide4"><img src="assets/clothesfolder/7w.jpg" /></a>-->
+<!--    </li>-->
+<!--    <li>-->
+<!--      <a href="#slide5"><img src="assets/clothesfolder/10w.jpg" /></a>-->
+<!--    </li>-->
+<!--  </ul>-->
+<!--</div>-->
+<!--<div class="row text-md-center" >-->
+<!--  <div class="col-4">-->
+
+<!--  </div>-->
+<!--  <div class="col-8">-->
+<!--<p-galleria [value]="product.image" [responsiveOptions]="responsiveOptions" [containerStyle]="{'max-width': '300px'}" [numVisible]="5" >-->
+<!--  <ng-template pTemplate="item" let-item>-->
+<!--    <img-->
+<!--          [src]="product.image" style="width: 100%;" />-->
+<!--  </ng-template>-->
+<!--  <ng-template pTemplate="thumbnail" let-item>-->
+<!--    <div class="p-grid p-nogutter p-justify-center">-->
+<!--      <img [src]="product.image" />-->
+<!--    </div>-->
+<!--  </ng-template>-->
+<!--</p-galleria>-->
+<!--  </div>-->
+<!--</div>-->
+
+
+
+
+

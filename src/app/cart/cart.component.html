@@ -1,0 +1,84 @@
+
+ <div class="container">
+   <div class="row justify-content-md-start">
+    <div class="col-md-2 offset-sm-2" >
+       <h2 style="margin-top: 120px;color: #007bb6;">Total Product ({{cartItems.length}})</h2>
+     </div>
+   </div>
+   <div class="row justify-content-md-center">
+
+      <div class="col-lg-6">
+       <div   style="margin-top: 5px">
+         <div class="row">
+               <div class="card mb-3"  *ngFor="let card of cartItems">
+               <div class="row">
+                 <div class="col-md-3 col-xs-8 ">
+                   <a routerLink="/products/{{card.productId}}">
+                     <img [src]="card?.image[0]" class="img-fluid"  style="width: 22vmin;height:22vmin;" >
+                   </a>
+                 </div>
+                 <div class="col">
+                   <div class="row">
+                     <div class="col-8">
+                       <div class="row">
+                         <h4>{{card.productDescription}} </h4>
+                       </div>
+                       <div class="row">
+                         <p>
+                           price:
+                           {{card.price}}
+                         </p>
+                       </div>
+                       <div class="row">
+                         <h4 class="card-text">
+                           size: {{card?.size[0]}}
+
+                         </h4>
+                       </div>
+                       <div class="row">
+                         <h3 class="card-text"><small class="text-muted">Last updated 3 mins ago</small></h3>
+                       </div>
+                     </div>
+                     <div class="col-4">
+                       <label for="quantity" class="form-check-label"> Quntity</label>
+                       <input type="number" class="form-control w-50 mt-1" [(ngModel)]="Quantity" id="quantity" >
+                     </div>
+                     <!--                 <div class="col-auto my-1">-->
+                     <!--                   <div class="custom-control custom-checkbox mr-sm-2">-->
+                     <!--                     <input type="checkbox" class="custom-control-input" id="customControlAutosizing">-->
+                     <!--                     <label class="custom-control-label" for="customControlAutosizing">Remember my preference</label>-->
+                     <!--                   </div>-->
+                     <!--                 </div>-->
+                   </div>
+
+                 </div>
+               </div>
+
+               <div class="card-footer">
+                 <button class="btn btn-sm  btn-outline-light "   style="color: #007bb6">Delete </button>
+               </div>
+
+             </div >
+
+         </div>
+       </div>
+     </div>
+      <div class="col-md-auto" >
+<!--       <div class="col-md-4 mt-1">-->
+         <div class="row " style="margin-top: 5px">
+           <div class="card" style="width: 15rem;">
+             <div class="row">
+               <div class=" col-1">
+               </div>
+               <div class="col-8">
+                 <h3 class="card-title">Total Mony: </h3>
+                 <h3 class="card-text" style="color: #007bb6"> {{totalCash}} LE</h3></div>
+             </div>
+           </div>
+         </div>
+         <div class="row justify-content-md-center">
+           <button type="button" class="btn btn-lg btn-block btn-success mt-2" >CheckOut</button>
+         </div>
+    </div>
+   </div>
+ </div>

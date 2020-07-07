@@ -1,0 +1,50 @@
+
+<div class="row justify-content-center" >
+  <p-card header="Advanced Card"   *ngFor="let prod of myproduct | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize ;let i=index" [style]="{width: '200px',marginRight:'10px',marginTop:'10px'}" styleClass="ui-card-shadow">
+    <p-header>
+      <div class="hovereffect">
+        <img class="img-responsive" src="Card" [src]="prod.image[0]" alt="">
+        <div class="overlay" style="margin-top: 20%;">
+          <!--             <h2>{{prod.brand}}</h2>-->
+          <a class="info"  (click)="openModal(content)" >Quick View</a>
+        </div>
+      </div>
+    </p-header>
+
+    <div (click)="showproductdrtails(prod)">
+      <a >
+        <h2> {{prod.brand}}</h2>
+        <h4>{{prod.price}}</h4>
+        <h4 class="mt-1">{{prod.size}}</h4>
+      </a>
+      <a>  </a>
+      <button class="btn btn-light btn-group-sm"> {{prod.size}}</button>
+    </div>
+    <p-footer>
+      <button type="button" class="btn btn-lg btn-outline-dark" (click)="addProductToCart(prod)"> Add To Card</button>
+
+    </p-footer>
+  </p-card>
+  <div style="margin-top:10px ">
+    <ngb-pagination
+      [(page)]="page"
+      [pageSize]="pageSize"
+      [collectionSize]="myproduct.length"></ngb-pagination>
+
+  </div>
+</div>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modalRef.hide()">Save</button>
+  </div>
+</ng-template>

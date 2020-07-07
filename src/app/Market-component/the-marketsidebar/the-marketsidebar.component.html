@@ -1,0 +1,202 @@
+
+<div class="vertical-menu" style="margin-top: 200px">
+  <div *ngIf="Sizeshow">
+  <a type="button" class="btn btn-light" data-toggle="collapse" data-target="#collapse1" >
+    SIZE <i class="fa fa-plus pull-right"> </i></a>
+  <div class="collapse" id="collapse1">
+    <div class="card card-body">
+      <input type="text" [(ngModel)]="Size" name="size" >
+      <div class="row">
+        <div class="col">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+            <label class="form-check-label" for="inlineRadio1">larg</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox"  name="inlineRadioOptions" id="inlineRadio2" value="option2">
+            <label class="form-check-label" for="inlineRadio2">xl</label>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" name="inlineRadioOptions" id="inlineRadio1c" value="option1">
+            <label class="form-check-label" for="inlineRadio1c">m</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" name="inlineRadioOptions" id="inlineRadio2c" value="option2">
+            <label class="form-check-label" for="inlineRadio2c">small</label>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  </div>
+  <a type="button" class="btn btn-light" data-toggle="collapse" data-target="#collapse1s" >
+    BRAND <i class="fa fa-plus pull-right"> </i></a>
+  <div class="collapse" id="collapse1s">
+    <div class="card card-body">
+      <div class="row">
+        <div class="col">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" name="inlineRadioOptions" id="inlineRadio1s" value="option1">
+            <label class="form-check-label" for="inlineRadio1s">larg</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox"  name="inlineRadioOptions" id="inlineRadio2s" value="option2">
+            <label class="form-check-label" for="inlineRadio2s">xl</label>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" name="inlineRadioOptions" id="inlineRadio1cs" value="option1">
+            <label class="form-check-label" for="inlineRadio1cs">m</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" name="inlineRadioOptions" id="inlineRadio2cs" value="option2">
+            <label class="form-check-label" for="inlineRadio2cs">small</label>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <a type="button" class="btn btn-light" data-toggle="collapse" data-target="#collapse1m" >
+    Color <i class="fa fa-plus pull-right"> </i></a>
+  <div class="collapse" id="collapse1m">
+    <div class="card card-body">
+      <div class="row">
+        <div class="col">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" name="inlineRadioOptions" id="inlineRadio1m" value="option1">
+            <label class="form-check-label" for="inlineRadio1m">larg</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox"  name="inlineRadioOptions" id="inlineRadio2m" value="option2">
+            <label class="form-check-label" for="inlineRadio2m">xl</label>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" name="inlineRadioOptions" id="inlineRadio1cm" value="option1">
+            <label class="form-check-label" for="inlineRadio1cm">m</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" name="inlineRadioOptions" id="inlineRadio2cm" value="option2">
+            <label class="form-check-label" for="inlineRadio2cm">small</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a type="button" class="btn btn-light" data-toggle="collapse" data-target="#collapse1f" >
+    {{Type}}<i class="fa fa-plus pull-right"> </i></a>
+  <div class="collapse" id="collapse1f">
+    <div class="card card-body">
+      <div class="row">
+        <div class="col">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" name="inlineRadioOptions" id="inlineRadio1f" value="option1">
+            <label class="form-check-label" for="inlineRadio1f">larg</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox"  name="inlineRadioOptions" id="inlineRadio2f" value="option2">
+            <label class="form-check-label" for="inlineRadio2f">xl</label>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" name="inlineRadioOptions" id="inlineRadio1cf" value="option1">
+            <label class="form-check-label" for="inlineRadio1cf">m</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" name="inlineRadioOptions" id="inlineRadio2cf" value="option2">
+            <label class="form-check-label" for="inlineRadio2cf">small</label>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div *ngIf="Discountshow">
+  <a type="button" class="btn btn-light" data-toggle="collapse" data-target="#collapse3"  >
+    Discount <i class="fa fa-plus pull-right"> </i></a>
+  <div class="collapse" id="collapse3">
+    <div class="card card-body">
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" name="inlineRadioOptions" id="inlineRadio12" value="">
+        <label class="form-check-label" for="inlineRadio12">1</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox"  name="inlineRadioOptions" id="inlineRadio23" value="">
+        <label class="form-check-label" for="inlineRadio23">2</label>
+      </div>
+    </div>
+  </div>
+  </div>
+ <div *ngIf="priceshow">
+  <a type="button" class="btn btn-light " data-toggle="collapse" data-target="#collapse5"  >
+    Price<i class="fa fa-plus pull-right"> </i></a>
+  <div class="collapse" id="collapse5">
+    <div class="card card-body">
+<!--      <form >-->
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">From</label>
+          <input type="number" [(ngModel)]="rangVal" name="vla" class="form-control" id="inputEmail4">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">To</label>
+          <input type="number" class="form-control" [(ngModel)]="rangeValues[1]" name="val2" id="inputPassword4">
+        </div>
+      </div>
+      <div class="form-group">
+        <label >Price</label>
+        <p-slider [(ngModel)]="rangeValues"  (onChange)="handleChange($event)" [range]="true"></p-slider>
+      </div>
+      <div class="form-group mb-0">
+        <button type="button" class=" btn btn-outline-dark " (click)="getItem()">Apply</button>
+      </div>
+<!--      </form>-->
+    </div>
+  </div>
+ </div>
+
+  <a type="button" class="btn btn-light " data-toggle="collapse" data-target="#collapse6"  >
+    Rating <i class="fa fa-plus pull-right"> </i></a>
+  <div class="collapse" id="collapse6">
+    <div class="card card-body">
+      <div class="row">
+        <p-rating [cancel]="false" [(ngModel)]="val" [iconOnClass]="'text-warning pi pi-star fx-3'"> </p-rating>
+        <span style="margin-left: 10px">(89)</span>
+      </div>
+      <div class="row">
+        <p-rating [cancel]="false" [(ngModel)]="val2" [iconOnClass]="'text-warning pi pi-star fx-3'"> </p-rating>
+        <span style="margin-left: 10px">(89)</span>
+      </div>
+      <div class="row">
+        <p-rating [cancel]="false" [(ngModel)]="val3" [iconOnClass]="'text-warning pi pi-star fx-3'"></p-rating>
+        <span style="margin-left: 10px">(89)</span>
+      </div>
+    </div>
+  </div>
+  <a type="button" class="btn btn-light " data-toggle="collapse" data-target="#collapse7"  >
+    chose <i class="fa fa-plus pull-right"> </i></a>
+  <div class="collapse" id="collapse7">
+    <div class="card card-body">
+      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+    </div>
+  </div>
+  <a type="button" class="btn btn-light " data-toggle="collapse" data-target="#collapse8"  >
+    chose <i class="fa fa-plus pull-right"> </i></a>
+  <div class="collapse" id="collapse8">
+    <div class="card card-body">
+      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+    </div>
+  </div>
+
+</div>
+<!--<button class="btn btn-danger" href="#" style="margin-left: 100px"> <i class="fa fa-amazon  fa-2x"></i></button>-->

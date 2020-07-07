@@ -1,0 +1,213 @@
+<div class="row fixed-top">
+  <div class="col-lg-12 m-0">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+      <a class="navbar-brand" style="font-size: 2.3rem ;margin-left: 40px" href="#">The Market</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+        </ul>
+        <form class="form-inline input-group-md" style="margin-right: 200px">
+          <input class="form-control input-group-md" type="search" placeholder="Search"  size="35" aria-label="Search">
+          <button class="btn btn-outline-dark btn-md" type="submit">Search</button>
+        </form>
+        <div class="navbar-brand">
+          <!--   <a href="#" title="create">-->
+          <!--     <span class="pi pi-user" style="color: black"> Create Account</span>-->
+          <!--   </a>-->
+          <p-splitButton
+            styleClass="ui-button-secondary"
+
+            label="Account" icon="pi pi-user"
+            (onClick)="openModal(template)" [model]="singIn" (mouseover)="setTemplate(template)" >
+
+          </p-splitButton>
+        </div>
+        <div class="navbar-brand">
+          <button type="button" (click)="getCartItem()" pButton class="ui-button-secondary" icon="pi pi-shopping-cart" label=" My Cart"></button>
+
+                         <!--        sidebar      -->
+
+          <p-sidebar [(visible)]="DisplaySidBar" position="right" >
+
+            <a (click)="navigateToCart()" style="margin-top: 30px">
+              <div class="row">
+              <div class="col-1">
+                <i class="fa fa-user fa-2x"></i>
+              </div>
+                <div class="col-1" style="margin-left: 1px">
+                  <h2 style="color: #007bb6"> Amr Ahmed</h2>
+                </div>
+              </div>
+            </a>
+            <div *ngIf="login===true">
+            <div class="card mt-2"  *ngFor="let item of cartItems" >
+                <div class="row " >
+                  <div class="col-4">
+
+                    <img [src]="item.image[0] " class="image2">
+
+                  </div>
+                  <div class="col-4">
+                    <div class="row">
+                      <h5>{{item.productDescription}}</h5>
+                    </div>
+                    <div class="row">
+                      <h4>price :{{item.price}} </h4>
+
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+
+<!--            <div class="card " >-->
+  <div class="row justify-content-center mt-3">
+    <div class="col-4">
+      <button type="button" class="btn btn-light btn-sm" (click)="navigateToCart()" >view Cart</button>
+    </div>
+    <div class="col-4">
+      <button type="button" class="btn btn-success btn-sm" (click)="navigateToCart()" >check Out</button>
+    </div>
+  </div>
+  </div>
+            <div *ngIf="login===false">
+              <p> the cart is Empty  pleas <a (click)="openModal(template)" style="color: green">Sign Up </a> or <a (click)="openModal(logintemplate)" style="color: #bb0000">Login</a></p>
+            </div>
+          </p-sidebar>
+        </div>
+      </div>
+    </nav>
+    <div>
+      <p-dialog header="Title" [(visible)]="display" >
+        <div class="row">
+          <div class="col">
+            <input type="text" class="form-control">
+          </div>
+        </div>
+      </p-dialog>
+    </div>
+    <p-megaMenu  [model]="items" ></p-megaMenu>
+  </div>
+</div>
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Modal</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="form-row ">
+      <div class="col-md-12">
+        <form [formGroup]="signUpForm" (ngSubmit)="setvalidation(signUpForm)" >
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label >Email</label>
+            <input type="email"
+                   [ngClass]="{'is-invalid':f.email.touched && f.email.errors}"
+                   formControlName="email" class="form-control" placeholder="Email">
+            <span *ngIf="signUpForm.get('email').errors?.required &&signUpForm.get('email').touched"
+                  style="color: darkred">
+              please Enter vaild Email</span>
+            <span *ngIf="signUpForm.get('email').errors?.pattern &&signUpForm.get('email').touched"
+                  style="color: darkred">
+              please Enter vaild Email pattern</span>
+          </div>
+          <div class="form-group col-md-6">
+            <label >Password</label>
+            <input type="password" class="form-control"
+                   [ngClass]="{'is-invalid':f.password.touched && f.password.errors}"
+                   formControlName="password"  placeholder="Password">
+            <span *ngIf="signUpForm.get('password').errors &&signUpForm.get('email').touched" >ENter a Valid password</span>
+          </div>
+          <div class="form-group col-md-6">
+            <label >Address</label>
+            <input type="text"
+                   class="form-control"
+                   [ngClass]="{'is-invalid':f.address.touched&& f.address.errors}"
+                   formControlName="address"  placeholder="Email">
+          </div>
+          <div class="form-group col-md-6">
+            <label >ZIP CODE</label>
+            <input type="text"
+                   class="form-control"
+                   [ngClass]="{'is-invalid':f.zip.touched&& f.zip.errors}"
+                   formControlName="zip" name="code" placeholder="zip code">
+          </div>
+          <div class="form-group">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="gridCheck">
+              <label class="form-check-label" for="gridCheck">
+                Check me out
+              </label>
+            </div>
+          </div>
+        </div>
+          <div class="text-lg-center">
+            <button  class="btn btn-outline-dark btn-block btn-lg"  [disabled]="signUpForm.invalid">Sign Up</button>
+            <!--          btn btn-dark btn-lg btn-block-->
+<!--            [ngClass]="{'dimmed': signUpForm.invalid}"-->
+            <h3>
+              Do you have account?<a (click)="openloginModal(logintemplate)" [ngClass]="{logincoler: loginFlage==false }"  >Login</a>
+            </h3>
+
+                 <!--     Directive Example        -->
+
+<!--              style="color: dodgerblue"-->
+<!--            <p  appDirectiveColor>  the event is hover</p>-->
+<!--           <div class="dropdown" appDropdowndirective>-->
+<!--             <button class=" btn btn-primary" appDropdowndirective data-toggle="dropdown" type="button"  >button</button>-->
+<!--             <div class="dropdown-menu">-->
+<!--              <a class="dropdown-item" href=#>sdddd</a>-->
+<!--               <a class="dropdown-item" href=#>sa</a>-->
+<!--               <a class="dropdown-item" href=#>sm</a>-->
+<!--             </div>-->
+<!--           </div>-->
+          </div>
+        </form>
+        </div>
+  </div>
+  </div>
+
+</ng-template>
+<ng-template #logintemplate>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Modal</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="form-row ">
+      <div class="col-md-12">
+        <form [formGroup]="signUpForm" (ngSubmit)="setvalidation(signUpForm)" >
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label >Email</label>
+              <input type="email" [ngClass]="{'is-invalid':f.email.touched && f.email.errors}"  formControlName="email" class="form-control" placeholder="Email">
+            </div>
+            <div class="form-group col-md-6">
+              <label >Password</label>
+              <input type="password" class="form-control"  [ngClass]="{'is-invalid':f.password.touched && f.password.errors}"  formControlName="password" placeholder="Password">
+            </div>
+
+            <div class="form-group">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridChxeck">
+                <label class="form-check-label" for="gridCheck">
+                  Check me out
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="text-lg-center">
+              <button  class="btn btn-dark btn-block btn-lg"  [disabled]="signUpForm.invalid">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</ng-template>
